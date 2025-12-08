@@ -1,0 +1,19 @@
+{
+  "name": "projetoagencia",
+  "version": "1.0.0",
+  "description": "Prática next.com com MySQL",
+  "scripts": {
+    "dev": "next dev -p 80",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cibelly",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "mysql2": "^3.14.2",
+    "next": "^15.5.6",
+    "nodemon": "^3.1.10",
+    "sequelize": "^6.37.7"
+  }
+}

@@ -1,0 +1,275 @@
+/* app/aeroportos/Aeroportos.module.css */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(33, 150, 243, 0.3);
+}
+
+.headerContent {
+    flex: 1;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1565c0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.titleIcon {
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    color: #5d99c6;
+    margin-top: 8px;
+    font-size: 1.1rem;
+}
+
+.novoAeroportoBtn {
+    background: linear-gradient(135deg, #2196f3 0%, #1976d2 100%);
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(33, 150, 243, 0.3);
+}
+
+.novoAeroportoBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(33, 150, 243, 0.4);
+}
+
+.tableContainer {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-bottom: 20px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th {
+    text-align: left;
+    padding: 18px 16px;
+    background: #e3f2fd;
+    color: #1976d2;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #bbdefb;
+}
+
+.td {
+    padding: 16px;
+    color: #37474f;
+    vertical-align: middle;
+    border-bottom: 1px solid #e1f5fe;
+}
+
+.tr:hover {
+    background-color: #f5faff;
+}
+
+.emptyMessage {
+    text-align: center;
+    padding: 40px;
+    color: #78909c;
+}
+
+.emptyMessage a {
+    color: #2196f3;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.emptyMessage a:hover {
+    text-decoration: underline;
+}
+
+.idBadge {
+    background: #e3f2fd;
+    color: #1976d2;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.aeroportoInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.aeroportoIcon {
+    width: 40px;
+    height: 40px;
+    background: #bbdefb;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.nome {
+    font-weight: 600;
+    color: #0d47a1;
+    margin-bottom: 4px;
+}
+
+.codigo {
+    font-size: 0.85rem;
+    color: #78909c;
+}
+
+.cidade {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cidadeIcon {
+    color: #f57c00;
+}
+
+.siglaBadge {
+    background: #e8f5e9;
+    color: #2e7d32;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border: 2px solid #c8e6c9;
+}
+
+.terminaisBadge {
+    background: #fff3e0;
+    color: #ef6c00;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid #ffe0b2;
+}
+
+.acoesContainer {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.formInline {
+    margin: 0;
+    display: inline;
+}
+
+.editarBtn,
+.excluirBtn {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.editarBtn {
+    background: #bbdefb;
+    color: #1565c0;
+}
+
+.editarBtn:hover {
+    background: #90caf9;
+    transform: translateY(-1px);
+}
+
+.excluirBtn {
+    background: #ffcdd2;
+    color: #c62828;
+}
+
+.excluirBtn:hover {
+    background: #ef9a9a;
+    transform: translateY(-1px);
+}
+
+.footer {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    font-size: 0.9rem;
+    color: #78909c;
+}
+
+.totalAeroportos {
+    font-weight: 600;
+    color: #1976d2;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .tableContainer {
+        overflow-x: auto;
+    }
+    
+    .table {
+        min-width: 900px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+    
+    .title {
+        font-size: 2rem;
+        justify-content: center;
+    }
+    
+    .acoesContainer {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .editarBtn,
+    .excluirBtn {
+        width: 100%;
+        justify-content: center;
+    }
+}

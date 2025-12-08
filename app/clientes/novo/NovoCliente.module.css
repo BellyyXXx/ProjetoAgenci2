@@ -1,0 +1,258 @@
+/* app/clientes/novo/NovoCliente.module.css */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 30px;
+}
+
+.header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.subtitle {
+    color: #718096;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.formContainer {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 40px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    width: 100%;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.formColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: 600;
+    color: #4a5568;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.label::after {
+    content: '*';
+    color: #e53e3e;
+    font-size: 1.2rem;
+}
+
+.input, .select {
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #4a5568;
+    transition: all 0.3s ease;
+    background: white;
+}
+
+.input:focus, .select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input::placeholder {
+    color: #a0aec0;
+}
+
+.select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234a5568' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.passwordWrapper {
+    position: relative;
+}
+
+.helperText {
+    color: #718096;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    font-style: italic;
+}
+
+.formActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    padding-top: 30px;
+    border-top: 2px solid #f7fafc;
+}
+
+.cancelButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: #edf2f7;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.cancelButton:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11);
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(50, 50, 93, 0.1);
+}
+
+.submitButton:active {
+    transform: translateY(0);
+}
+
+.buttonIcon {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.infoBox {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.infoTitle {
+    font-size: 1.4rem;
+    color: #2d3748;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.infoList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.infoList li {
+    color: #718096;
+    font-size: 0.95rem;
+    padding-left: 25px;
+    position: relative;
+}
+
+.infoList li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #667eea;
+    font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 900px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .container {
+        padding: 20px;
+    }
+    
+    .formContainer {
+        padding: 25px;
+    }
+    
+    .formActions {
+        flex-direction: column;
+    }
+    
+    .cancelButton,
+    .submitButton {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .infoBox {
+        padding: 20px;
+    }
+}
