@@ -1,9 +1,8 @@
-// app/servicos/altera/page.js - CORRIGIDO
 import Servico from '@/models/Servico';
 import styles from './altera.module.css';
 
 async function TelaEditaServico({ searchParams }) {
-    // Correção: await searchParams
+
     const { id } = await searchParams;
     
     if (!id) {
@@ -45,7 +44,7 @@ async function TelaEditaServico({ searchParams }) {
                 { where: { id } }
             );
             
-            // Redirecionar após sucesso
+
             redirect('/servicos');
         } catch (error) {
             console.error('Erro ao atualizar serviço:', error);
