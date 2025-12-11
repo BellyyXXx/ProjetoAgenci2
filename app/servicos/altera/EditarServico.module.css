@@ -1,0 +1,579 @@
+/* app/servicos/altera/EditarServico.module.css */
+.container {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+    padding: 30px;
+}
+
+/* Cabeçalho */
+.header {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.headerContent {
+    margin-bottom: 20px;
+}
+
+.title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #22543d;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.titleIcon {
+    font-size: 2.2rem;
+}
+
+.subtitle {
+    color: #4a5568;
+    font-size: 1.1rem;
+    margin-top: 10px;
+}
+
+.serviceInfo {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    margin-top: 20px;
+}
+
+.serviceBadge {
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    padding: 12px 24px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    min-width: 120px;
+    text-align: center;
+}
+
+.serviceName {
+    display: block;
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.serviceCategory {
+    background: #e6fffa;
+    color: #234e52;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Formulário */
+.formContainer {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    width: 100%;
+}
+
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.formColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.label {
+    font-weight: 600;
+    color: #2d3748;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.label::after {
+    content: '*';
+    color: #e53e3e;
+    font-size: 1.2rem;
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #4a5568;
+    transition: all 0.3s ease;
+    background: white;
+    box-sizing: border-box;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    border-color: #48bb78;
+    box-shadow: 0 0 0 3px rgba(72, 187, 120, 0.1);
+}
+
+.input::placeholder,
+.textarea::placeholder {
+    color: #a0aec0;
+}
+
+.select {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%234a5568' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    background-size: 16px;
+    padding-right: 45px;
+    cursor: pointer;
+}
+
+.textarea {
+    resize: vertical;
+    min-height: 120px;
+    font-family: inherit;
+}
+
+/* Input de preço personalizado */
+.priceInputWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.currencySymbol {
+    position: absolute;
+    left: 16px;
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.priceInput {
+    padding-left: 40px !important;
+}
+
+.helperText {
+    color: #718096;
+    font-size: 0.85rem;
+    margin-top: 4px;
+    display: block;
+    font-style: italic;
+}
+
+/* Seção de Informações */
+.infoSection {
+    margin-bottom: 30px;
+}
+
+.infoCard {
+    background: #f0fff4;
+    border-radius: 12px;
+    padding: 25px;
+    border: 2px solid #c6f6d5;
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.infoIcon {
+    width: 50px;
+    height: 50px;
+    background: #c6f6d5;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+}
+
+.infoContent {
+    flex: 1;
+}
+
+.infoTitle {
+    font-size: 1.2rem;
+    color: #22543d;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.infoGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.infoItem {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.infoLabel {
+    color: #718096;
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.infoValue {
+    color: #4a5568;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.categoryBadge {
+    background: #e6fffa;
+    color: #234e52;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.statusActive {
+    background: #c6f6d5;
+    color: #276749;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Ações do Formulário */
+.formActions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 30px;
+    border-top: 2px solid #f7fafc;
+}
+
+.cancelButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: #edf2f7;
+    color: #4a5568;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.cancelButton:hover {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.actionButtons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.backButtonSmall {
+    color: #48bb78;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: 2px solid #48bb78;
+    transition: all 0.3s ease;
+}
+
+.backButtonSmall:hover {
+    background: #48bb78;
+    color: white;
+}
+
+.submitButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 28px;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(72, 187, 120, 0.3);
+}
+
+.submitButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 14px rgba(72, 187, 120, 0.4);
+}
+
+.buttonIcon {
+    font-size: 1.2rem;
+}
+
+/* Dicas */
+.tipsBox {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tipsTitle {
+    font-size: 1.4rem;
+    color: #22543d;
+    margin-bottom: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.tipsIcon {
+    font-size: 1.3rem;
+}
+
+.tipsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.tipCard {
+    background: #f0fff4;
+    border-radius: 10px;
+    padding: 20px;
+    border: 1px solid #c6f6d5;
+    transition: all 0.3s ease;
+}
+
+.tipCard:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.tipHeader {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.tipNumber {
+    width: 30px;
+    height: 30px;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.tipBadge {
+    background: #c6f6d5;
+    color: #22543d;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.tipText {
+    color: #4a5568;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+/* Container de Erro */
+.errorContainer {
+    background: white;
+    border-radius: 16px;
+    padding: 60px;
+    text-align: center;
+    max-width: 600px;
+    margin: 100px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+.errorTitle {
+    font-size: 2rem;
+    color: #e53e3e;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.errorIcon {
+    font-size: 2rem;
+}
+
+.errorMessage {
+    color: #718096;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.backButton {
+    display: inline-block;
+    background: #48bb78;
+    color: white;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.backButton:hover {
+    background: #38a169;
+    transform: translateY(-2px);
+}
+
+/* Responsividade */
+@media (max-width: 1100px) {
+    .formGrid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+    
+    .infoGrid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .tipsGrid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+    
+    .formContainer,
+    .tipsBox {
+        padding: 25px;
+    }
+    
+    .title {
+        font-size: 2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .formActions {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .actionButtons {
+        width: 100%;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .cancelButton,
+    .backButtonSmall,
+    .submitButton {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .serviceInfo {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+        padding: 15px;
+    }
+    
+    .infoCard {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+    
+    .infoIcon {
+        margin: 0 auto;
+    }
+    
+    .tipsGrid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem;
+    }
+    
+    .formContainer,
+    .tipsBox,
+    .errorContainer {
+        padding: 20px;
+    }
+    
+    .errorContainer {
+        margin: 50px auto;
+        padding: 40px 20px;
+    }
+    
+    .errorTitle {
+        font-size: 1.6rem;
+        flex-direction: column;
+    }
+}

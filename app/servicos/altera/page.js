@@ -1,57 +1,147 @@
-import { redirect } from "next/navigation";
-import { Servico } from "../../../database/tables";
-
-async function editaServico(formData) {
-    'use server'
-
-    const id = formData.get('id');
-    const nome = formData.get('nome');
-    const categoria = formData.get('categoria');
-    const descricao = formData.get('descricao');
-    const preco = parseFloat(formData.get('preco'));
-    const duracao = formData.get('duracao');
-
-    const serv = await Servico.findByPk(id);
-
-    serv.nome = nome;
-    serv.categoria = categoria;
-    serv.descricao = descricao;
-    serv.preco = preco;
-    serv.duracao = duracao;
-    
-    await serv.save();
-    redirect('/servicos');
-}
+// app/servicos/altera/page.js - CORRIGIDO
+import Servico from '@/models/Servico';
+import styles from './altera.module.css';
 
 async function TelaEditaServico({ searchParams }) {
-    const id = searchParams.id;
-    const servico = await Servico.findByPk(id);
+    // Correção: await searchParams
+    const { id } = await searchParams;
     
+    if (!id) {
+        return (
+            <div className={styles.container}>
+                <h1>Editar Serviço</h1>
+                <p>ID do serviço não fornecido.</p>
+            </div>
+        );
+    }
+
+    const servico = await Servico.findByPk(id);
+
+    // Se não encontrar o serviço
+    if (!servico) {
+        return (
+            <div className={styles.container}>
+                <h1>Editar Serviço</h1>
+                <p>Serviço não encontrado.</p>
+            </div>
+        );
+    }
+
+    // Converter preco para número para evitar erro toFixed()
+    const precoNumerico = Number(servico.preco) || 0;
+
+    async function handleSubmit(formData) {
+        'use server';
+        
+        const nome = formData.get('nome');
+        const categoria = formData.get('categoria');
+        const descricao = formData.get('descricao');
+        const preco = parseFloat(formData.get('preco'));
+        const duracao = formData.get('duracao');
+        
+        try {
+            await Servico.update(
+                { nome, categoria, descricao, preco, duracao },
+                { where: { id } }
+            );
+            
+            // Redirecionar após sucesso
+            redirect('/servicos');
+        } catch (error) {
+            console.error('Erro ao atualizar serviço:', error);
+        }
+    }
+
     return (
-        <>
-            <h1>Editando Serviço</h1>
-
-            <form action={editaServico}>
-                <input type="hidden" name="id" defaultValue={servico.id} />
-           
-                <label htmlFor="nome">Nome do Serviço</label> <br/>
-                <input type="text" name="nome" defaultValue={servico.nome} /> <br/>
-
-                <label htmlFor="categoria">Categoria</label> <br/>
-                <input type="text" name="categoria" defaultValue={servico.categoria} /> <br/>
-
-                <label htmlFor="descricao">Descrição</label> <br/>
-                <textarea name="descricao" rows="4" cols="50" defaultValue={servico.descricao} /> <br/>
-
-                <label htmlFor="preco">Preço (R$)</label> <br/>
-                <input type="number" name="preco" step="0.01" defaultValue={servico.preco} /> <br/>
-
-                <label htmlFor="duracao">Duração</label> <br/>
-                <input type="text" name="duracao" placeholder="Ex: 6h, 1 dia, 30min" defaultValue={servico.duracao} /> <br/>
-
-                <button type="submit">Salvar Alterações</button>   
-            </form>
-        </>
+        <div className={styles.container}>
+            <h1>Editar Serviço</h1>
+            
+            <div className={styles.serviceCard}>
+                <div className={styles.serviceInfo}>
+                    <span className={styles.serviceBadge}>
+                        {/* Correção: usar preco convertido para número */}
+                        R$ {precoNumerico.toFixed(2)}
+                    </span>
+                    <div>
+                        <span className={styles.serviceName}>{servico.nome}</span>
+                        <span className={styles.serviceCategory}>{servico.categoria}</span>
+                    </div>
+                </div>
+                
+                <form action={handleSubmit} className={styles.form}>
+                    <div className={styles.formGroup}>
+                        <label htmlFor="nome">Nome do Serviço</label>
+                        <input 
+                            type="text" 
+                            id="nome" 
+                            name="nome" 
+                            defaultValue={servico.nome}
+                            required 
+                        />
+                    </div>
+                    
+                    <div className={styles.formGroup}>
+                        <label htmlFor="categoria">Categoria</label>
+                        <select 
+                            id="categoria" 
+                            name="categoria" 
+                            defaultValue={servico.categoria}
+                            required
+                        >
+                            <option value="">Selecione...</option>
+                            <option value="Voo">Voo</option>
+                            <option value="Hotel">Hotel</option>
+                            <option value="Pacote">Pacote</option>
+                            <option value="Transfer">Transfer</option>
+                        </select>
+                    </div>
+                    
+                    <div className={styles.formGroup}>
+                        <label htmlFor="descricao">Descrição</label>
+                        <textarea 
+                            id="descricao" 
+                            name="descricao" 
+                            defaultValue={servico.descricao}
+                            rows="4"
+                        />
+                    </div>
+                    
+                    <div className={styles.formRow}>
+                        <div className={styles.formGroup}>
+                            <label htmlFor="preco">Preço (R$)</label>
+                            <input 
+                                type="number" 
+                                id="preco" 
+                                name="preco" 
+                                step="0.01"
+                                defaultValue={precoNumerico}
+                                required 
+                            />
+                        </div>
+                        
+                        <div className={styles.formGroup}>
+                            <label htmlFor="duracao">Duração</label>
+                            <input 
+                                type="text" 
+                                id="duracao" 
+                                name="duracao" 
+                                defaultValue={servico.duracao}
+                                placeholder="Ex: 3 dias, 2 horas"
+                            />
+                        </div>
+                    </div>
+                    
+                    <div className={styles.formActions}>
+                        <button type="submit" className={styles.saveButton}>
+                            Salvar Alterações
+                        </button>
+                        <a href="/servicos" className={styles.cancelButton}>
+                            Cancelar
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
     );
 }
 
