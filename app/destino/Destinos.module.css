@@ -1,0 +1,362 @@
+/* app/destino/Destinos.module.css */
+
+.container {
+    padding: 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding: 24px;
+    background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);
+    border-radius: 16px;
+    color: white;
+}
+
+.title {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.titleIcon {
+    font-size: 36px;
+}
+
+.subtitle {
+    margin: 8px 0 0;
+    opacity: 0.9;
+    font-size: 16px;
+}
+
+.novoBtn {
+    background: white;
+    color: #48bb78;
+    padding: 12px 24px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.novoBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+    border-color: white;
+}
+
+.plusIcon {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.tableContainer {
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.th {
+    background: #f8fafc;
+    padding: 18px 16px;
+    text-align: left;
+    font-weight: 600;
+    color: #475569;
+    border-bottom: 2px solid #e2e8f0;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.td {
+    padding: 20px 16px;
+    border-bottom: 1px solid #f1f5f9;
+    vertical-align: middle;
+}
+
+.tr {
+    transition: background-color 0.2s ease;
+}
+
+.tr:hover {
+    background-color: #f0fdf4;
+}
+
+.idBadge {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.nomeContainer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.destinoIcon {
+    font-size: 24px;
+    background: #f0fdf4;
+    padding: 10px;
+    border-radius: 10px;
+    color: #059669;
+    min-width: 44px;
+    text-align: center;
+}
+
+.nomeDestino {
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 4px;
+    font-size: 16px;
+}
+
+.categoria {
+    font-size: 12px;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 2px 8px;
+    border-radius: 10px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.descricaoContainer {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    max-width: 300px;
+}
+
+.descricaoIcon {
+    opacity: 0.7;
+    font-size: 18px;
+    margin-top: 2px;
+}
+
+.descricaoTexto {
+    color: #475569;
+    font-size: 14px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cidadeContainer,
+.paisContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.cidadeIcon,
+.paisIcon {
+    opacity: 0.7;
+    font-size: 18px;
+}
+
+.paisNome {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.acoesContainer {
+    display: flex;
+    gap: 8px;
+}
+
+.formInline {
+    margin: 0;
+}
+
+.editarBtn,
+.excluirBtn {
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.editarBtn {
+    background: #d1fae5;
+    color: #065f46;
+}
+
+.editarBtn:hover {
+    background: #a7f3d0;
+    transform: translateY(-1px);
+}
+
+.excluirBtn {
+    background: #fee2e2;
+    color: #dc2626;
+}
+
+.excluirBtn:hover {
+    background: #fecaca;
+    transform: translateY(-1px);
+}
+
+.btnIcon {
+    font-size: 16px;
+}
+
+.emptyMessage {
+    text-align: center;
+    padding: 60px 20px !important;
+}
+
+.emptyContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.emptyIcon {
+    font-size: 48px;
+    opacity: 0.5;
+}
+
+.emptyMessage p {
+    color: #64748b;
+    margin: 8px 0;
+}
+
+.emptyLink {
+    color: #059669;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: 2px solid #d1fae5;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.emptyLink:hover {
+    background: #d1fae5;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.totalRegistros {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.totalIcon {
+    font-size: 20px;
+}
+
+.estatisticas {
+    display: flex;
+    gap: 20px;
+}
+
+.estatisticaItem {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.estatisticaIcon {
+    font-size: 16px;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .tableContainer {
+        overflow-x: auto;
+    }
+    
+    .table {
+        min-width: 900px;
+    }
+    
+    .descricaoContainer {
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .acoesContainer {
+        flex-direction: column;
+        min-width: 120px;
+    }
+    
+    .footer {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+    
+    .estatisticas {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.5s ease-out;
+}

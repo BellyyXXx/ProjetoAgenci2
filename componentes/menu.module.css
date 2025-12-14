@@ -1,0 +1,454 @@
+/* app/componentes/menu.module.css */
+.nav {
+  position: relative;
+  width: 100%;
+}
+
+/* Botão Mobile */
+.mobileMenuButton {
+  display: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 10px;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 0 auto 20px;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.mobileMenuButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.mobileMenuIcon {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.mobileMenuLabel {
+  font-size: 0.9rem;
+}
+
+/* Container do Menu */
+.menuContainer {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menuHeader {
+  display: none;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 2px solid rgba(102, 126, 234, 0.1);
+}
+
+.menuTitle {
+  font-size: 1.3rem;
+  color: #2d3748;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+.menuTitleIcon {
+  font-size: 1.2rem;
+}
+
+.closeMobileButton {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  color: #718096;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: all 0.2s;
+}
+
+.closeMobileButton:hover {
+  background: #f7fafc;
+  color: #4a5568;
+}
+
+/* Lista do Menu */
+.menuList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.menuItem {
+  position: relative;
+}
+
+.menuLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.menuLink:hover {
+  background: rgba(102, 126, 234, 0.1);
+  border-color: #667eea;
+  color: #667eea;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
+}
+
+.menuLink.active {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-color: transparent;
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+}
+
+.menuLink.active:hover {
+  background: linear-gradient(135deg, #5a67d8 0%, #6b46c1 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+.menuIcon {
+  font-size: 1.1rem;
+  width: 24px;
+  text-align: center;
+}
+
+.menuLabel {
+  white-space: nowrap;
+}
+
+.activeIndicator {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 6px;
+  height: 6px;
+  background: #48bb78;
+  border-radius: 50%;
+  animation: pulseIndicator 2s infinite;
+}
+
+@keyframes pulseIndicator {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+/* Botão "Ver mais" */
+.moreItem {
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.moreButton {
+  background: #edf2f7;
+  border: 1px solid #e2e8f0;
+  color: #4a5568;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.moreButton:hover {
+  background: #e2e8f0;
+  color: #2d3748;
+  transform: translateY(-1px);
+}
+
+.moreButton[aria-expanded="true"] {
+  background: rgba(102, 126, 234, 0.1);
+  color: #667eea;
+  border-color: #667eea;
+}
+
+.moreIcon {
+  font-size: 0.8rem;
+}
+
+/* Itens extras */
+.extraItem {
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Informações do usuário (mobile) */
+.mobileUserInfo {
+  display: none;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: rgba(102, 126, 234, 0.05);
+  border-radius: 10px;
+  margin-top: 20px;
+  border: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.userAvatar {
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 10px rgba(102, 126, 234, 0.3);
+}
+
+.avatarLetter {
+  display: block;
+}
+
+.userDetails {
+  flex: 1;
+}
+
+.userName {
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 2px;
+  font-size: 0.95rem;
+}
+
+.userRole {
+  color: #718096;
+  font-size: 0.85rem;
+}
+
+.logoutButton {
+  background: #fed7d7;
+  color: #9b2c2c;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logoutButton:hover {
+  background: #fc8181;
+  color: white;
+  transform: translateY(-1px);
+}
+
+.logoutIcon {
+  font-size: 1.1rem;
+}
+
+/* Rodapé do menu */
+.menuFooter {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.pageCounter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #718096;
+  font-size: 0.85rem;
+  justify-content: center;
+}
+
+.counterIcon {
+  font-size: 0.9rem;
+}
+
+.counterText {
+  font-style: italic;
+}
+
+/* Indicador de página atual (desktop) */
+.currentPageIndicator {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  animation: slideIn 0.3s ease;
+  z-index: 10;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.currentPageIcon {
+  font-size: 1rem;
+  color: #667eea;
+}
+
+.currentPageText {
+  font-weight: 600;
+  color: #2d3748;
+  font-size: 0.95rem;
+}
+
+/* Responsividade */
+@media (max-width: 1200px) {
+  .menuList {
+    justify-content: center;
+  }
+  
+  .menuLink {
+    padding: 10px 16px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .menuLink {
+    padding: 10px 14px;
+  }
+  
+  .menuIcon {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .mobileMenuButton {
+    display: flex;
+  }
+  
+  .menuContainer {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100vh;
+    border-radius: 0;
+    padding: 20px;
+    z-index: 2000;
+    transition: left 0.3s ease;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  .menuContainer.menuOpen {
+    left: 0;
+  }
+  
+  .menuHeader {
+    display: flex;
+  }
+  
+  .closeMobileButton {
+    display: block;
+  }
+  
+  .menuList {
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+  }
+  
+  .menuLink {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+  }
+  
+  .moreButton {
+    width: 100%;
+    justify-content: center;
+    padding: 12px;
+  }
+  
+  .mobileUserInfo {
+    display: flex;
+  }
+  
+  .currentPageIndicator {
+    display: none;
+  }
+  
+  .extraItem {
+    animation: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .menuContainer {
+    width: 100%;
+  }
+  
+  .mobileMenuButton {
+    width: 100%;
+    justify-content: center;
+  }
+}
