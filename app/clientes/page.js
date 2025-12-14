@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { raw } from "mysql2";
 import { redirect } from 'next/navigation';
 import { Cliente } from "../../database/tables";

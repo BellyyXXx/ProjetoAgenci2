@@ -136,8 +136,7 @@ ServicoVoo.hasMany(AgendamentoVoo, { foreignKey: 'servicoVooId' });
 AgendamentoVoo.belongsTo(ServicoVoo, { foreignKey: 'servicoVooId' });
 
 
-// SYNC
-mysql.sync({ alter: true });
+// mysql.sync({ alter: true });
 
 export {
   Cliente,

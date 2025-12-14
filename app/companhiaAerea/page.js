@@ -1,4 +1,5 @@
 // app/companhiaAerea/page.js
+export const dynamic = 'force-dynamic';
 import { redirect } from 'next/navigation';
 import { CompanhiaAerea } from "../../database/tables";
 import styles from './CompanhiaAerea.module.css';

@@ -1,4 +1,5 @@
 // app/aeroportos/page.js
+export const dynamic = 'force-dynamic';
 import { redirect } from 'next/navigation';
 import { Aeroporto } from "../../database/tables";
 import styles from './Aeroportos.module.css';

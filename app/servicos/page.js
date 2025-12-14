@@ -1,4 +1,5 @@
 // app/servicos/page.js
+export const dynamic = 'force-dynamic';
 import { redirect } from 'next/navigation';
 import { Servico } from "../../database/tables";
 import styles from './Servicos.module.css';

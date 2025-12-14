@@ -1,4 +1,5 @@
 // app/destino/page.js - Versão atualizada com classes CSS
+export const dynamic = 'force-dynamic';
 import { redirect } from 'next/navigation';
 import { Destino } from "../../database/tables";
 import styles from './Destinos.module.css';
