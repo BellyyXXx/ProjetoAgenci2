@@ -1,5 +1,5 @@
-import Servico from '@/models/Servico';
-import styles from './altera.module.css';
+import Servico from "../../../database/tables";
+import styles from './EditarServico.module.css';
 
 async function TelaEditaServico({ searchParams }) {
 
